@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programação em Microinformática</title>
+</head>
+<body>
+<h1>Use uma rotina de repetição para exibir todos os números existentes<br>
+    entre os dois números, de forma negativa, ou seja, contando do maior para o menor</h1>
+
+
+    <form id="form">
+    <input id="numero1" type="number" placeholder="Digite o primeiro numero">
+    <input id="numero2" type="number" placeholder="Digite o ultimo numero">
+
+    <button>Exibir</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+    function onSubmit(event) {
+    event.preventDefault()
+
+    let num1 = parseFloat(numero1.value)
+    let num2 = parseFloat(numero2.value)
+    let maior
+    let menor
+
+    result.innerHTML = ''
+
+    if(num1> num2) {
+    maior = num1
+    menor = num2
+
+    for (let i = num1; i > num2; i--) {
+        result.innerHTML += `${i},` 
+    }
+
+    } else if (num1<num2){
+    maior = num2
+    maior = num1
+    for (let i = num1; i < num2; i++) {
+        result.innerHTML += `${i},` 
+    }
+    }
+
+
+    result.innerHTML += num2
+    }
+
+    form.addEventListener('submit', onSubmit)
+  </script>
+</body>
+</html>
